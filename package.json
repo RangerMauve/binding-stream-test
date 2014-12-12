@@ -1,0 +1,34 @@
+{
+  "name": "binding-stream-test",
+  "version": "0.0.0",
+  "description": "Testing out my idea for a \"data binding stream\" that I'll use for stream-based UIs",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "browserify -o bundle.js -t brfs ./",
+    "watch": "watchify -o bundle.js -t brfs ./"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/RangerMauve/binding-stream-test.git"
+  },
+  "author": "rangermauve",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/RangerMauve/binding-stream-test/issues"
+  },
+  "homepage": "https://github.com/RangerMauve/binding-stream-test",
+  "devDependencies": {
+    "brfs": "^1.2.0",
+    "browserify": "^7.0.0",
+    "watchify": "^2.1.1"
+  },
+  "dependencies": {
+    "dom-delegate-stream": "^1.0.0",
+    "html-patcher-stream": "^1.0.0",
+    "immutable-state-stream": "^1.0.0",
+    "mustache": "^0.8.2",
+    "object-path": "^0.8.1",
+    "through2-map": "^1.4.0"
+  }
+}
