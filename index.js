@@ -2,7 +2,7 @@ var domDelegate = require("dom-delegate-stream");
 var htmlPatcher = require("html-patcher-stream");
 var immutableState = require("immutable-state-stream");
 var mustache = require("mustache");
-var map = require("through2-map");
+var map = require("through2-map").obj;
 var fs = require("fs");
 var objectPath = require("object-path");
 
@@ -12,12 +12,13 @@ var main = document.querySelector("main");
 
 var delegate = domDelegate(main);
 
-var pipeline = map({
-		objectMode: true
-	}, generate_state_update)
+var pipeline = map(generate_state_update);
+
+pipeline
 	.pipe(immutableState())
 	.pipe(map(render))
 	.pipe(htmlPatcher(main, render({})));
+
 
 delegate.on("change", "input, textarea").pipe(pipeline);
 delegate.on("keyup", "input, textarea").pipe(pipeline);
