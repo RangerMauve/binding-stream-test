@@ -1,7 +1,29 @@
-<div>
+<p>
 	<h1>All Streams. All The Data.</h1>
 	<h2>
-		{{desu.nyan}}
+		{{inputs.text}}
 	</h2>
-	<input data-binding="desu.nyan">
-</div>
+	<input data-binding="inputs.text">
+	<p>
+		<input type="radio" name="radio" value="foo" data-binding="inputs.radio">
+		<input type="radio" name="radio" value="bar" data-binding="inputs.radio">
+		<input type="radio" name="radio" value="baz" data-binding="inputs.radio">
+		: {{inputs.radio}}
+	</p>
+	<p>
+		<input type="checkbox" data-binding="inputs.checkbox">
+		? {{inputs.checkbox}}
+	</p>
+	<p>
+		<select data-binding="inputs.select">
+			<option>Foo</option>
+			<option>Bar</option>
+			<option>Baz</option>
+		</select>
+		: {{inputs.select}}
+	</p>
+	<p>
+		<p class="textarea-output">{{inputs.textarea}}</p>
+		<textarea data-binding="inputs.textarea"></textarea>
+	</p>
+</p>
